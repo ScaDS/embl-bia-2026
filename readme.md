@@ -1,6 +1,6 @@
-# Navigating in Latent Space and Retrieval-Augmented Generation
+# BioImage Analysis Course @EMBL Heidelberg 2026
 
-This notebook collection introduces how to work with vector embeddings, visualizing them and using them to make output of large language models more accurate. The materials are rendered to this url:
+This notebook collection introduces how to work with microscopy images. The materials are rendered to this url:
 
-https://scads.github.io/rag-2026/intro.html
+https://scads.github.io/embl-bia-2026/intro.html
 
