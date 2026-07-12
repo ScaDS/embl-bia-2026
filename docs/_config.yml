@@ -20,7 +20,7 @@ html:
 
 sphinx:
   config:
-    html_logo: sand-bob-logo.png
+    html_logo: data/logo.png
 
 repository:
   url: https://github.com/scads/embl-bia-2026
