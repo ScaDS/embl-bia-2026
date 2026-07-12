@@ -1,0 +1,44 @@
+format: jb-book
+root: index
+parts:
+  - caption: "Preparation"
+    chapters:
+      - file: 00_installation.md
+
+  - caption: "Jupyter notebook basics"
+    chapters:
+      - file: 01_our_first_juptyer_notebook.ipynb
+      - file: 02_Dont_try_this_at_home.ipynb
+
+  - caption: "Image file handling and visualization"
+    chapters:
+      - file: 10_image_processing.ipynb
+      - file: 11_cropping_images.ipynb
+      - file: 12_multi_channel_image_data.ipynb
+      - file: 14_inspecting_3d_images.ipynb
+
+  - caption: "Image filtering"
+    chapters:
+      - file: 20_filter_overview.ipynb
+      - file: 22_background_removal.ipynb
+        
+  - caption: "Image segmentation"
+    chapters:
+      - file: 50_Thresholding.ipynb
+      - file: 51_connected_component_labeling.ipynb
+      - file: 52_voronoi_otsu_labeling.ipynb
+      - file: 55_cellpose-sam.ipynb
+
+  - caption: "Quantitative measurements"
+    chapters:
+      - file: 70_quantitative_measurements.ipynb
+      - file: 71_measurement_visualization.ipynb
+      - file: 72_timelapse_measurement_visualization.ipynb
+      - file: 73_process_folders.ipynb
+
+  - caption: "AI for code generation"
+    chapters:
+      - file: 80_bia-bob-demo.ipynb
+      - file: 81_bia_bob-statistical_testing.ipynb
+      - file: 82_generate_notebook.ipynb
+      

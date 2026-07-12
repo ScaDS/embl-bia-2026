@@ -1,0 +1,18 @@
+[project]
+name = "embl-bia-2026"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "bia-bob>=0.35.0",
+    "cellpose>=4.2.1.1",
+    "jupyterlab>=4.6.1",
+    "numpy>=2.5.1",
+    "openai>=2.45.0",
+    "pandas>=3.0.3",
+    "pyclesperanto>=0.22.0",
+    "python-dotenv>=1.2.2",
+    "scikit-image>=0.26.0",
+    "stackview>=0.19.1",
+]

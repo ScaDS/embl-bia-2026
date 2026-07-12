@@ -1,0 +1,28 @@
+# Book settings
+# Learn more at https://jupyterbook.org/customize/config.html
+
+title: BioImage-Analysis Training @ EMBL Heidelberg 2026
+author: Robert Haase
+copyright: "2026"
+only_build_toc_files: false
+
+execute:
+  execute_notebooks: "off"
+
+parse:
+  myst_enable_extensions:
+    - colon_fence
+
+html:
+  use_issues_button: true
+  use_repository_button: true
+  logo: sand-bob-logo.png
+
+sphinx:
+  config:
+    html_logo: sand-bob-logo.png
+
+repository:
+  url: https://github.com/scads/embl-bia-2026
+  path_to_book: examples
+  branch: main
