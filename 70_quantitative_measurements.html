@@ -1,0 +1,1200 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Quantitative image analysis &#8212; BioImage-Analysis Training @ EMBL Heidelberg 2026</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="_static/styles/bootstrap.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=4ec06e9971c5264fbd345897d5258098f11cc577" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94">
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=8bf782fb4ee92b3d3646425e50f299c4e1fd152d"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '70_quantitative_measurements';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Visualization of measurements" href="71_measurement_visualization.html" />
+    <link rel="prev" title="Image Segmentation with CellPose-SAM" href="55_cellpose-sam.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="docsearch:language" content="en">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+  <label class="overlay overlay-primary" for="__primary"></label>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+      
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+  </div>
+
+  
+  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+      <span class="fa-solid fa-bars"></span>
+  </label>
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="intro.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image">
+    <img src="_static/logo.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  
+  <div class="col-lg-9 navbar-header-items">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="00_installation.html">
+                        Preparation of the session
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="01_our_first_juptyer_notebook.html">
+                        Python code in Jupyter notebooks
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="02_Dont_try_this_at_home.html">
+                        Pitfalls when working with Jupyter notebooks
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="10_image_processing.html">
+                        Bioimage Analysis in Jupyter Notebooks
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="11_cropping_images.html">
+                        Cropping images
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="12_multi_channel_image_data.html">
+                        Multi-channel image data
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="14_inspecting_3d_images.html">
+                        Inspecting 3D image data with pyclesperanto
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="20_filter_overview.html">
+                        Filter overview
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="22_background_removal.html">
+                        Background removal filters
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="50_Thresholding.html">
+                        Thresholding
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="51_connected_component_labeling.html">
+                        Connected component labeling
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="52_voronoi_otsu_labeling.html">
+                        Voronoi-Otsu-labeling
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="55_cellpose-sam.html">
+                        Image Segmentation with CellPose-SAM
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        Quantitative image analysis
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="71_measurement_visualization.html">
+                        Visualization of measurements
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="72_timelapse_measurement_visualization.html">
+                        Cell Rounding Assay Analysis
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="73_process_folders.html">
+                        How process files in a folder
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="80_bia-bob-demo.html">
+                        BiA-Bob
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="81_bia_bob-statistical_testing.html">
+                        Statistical testing
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="82_generate_notebook.html">
+                        AI-assisted Notebook generation
+                      </a>
+                    </li>
+                
+                </div>
+            </div>
+            
+    </ul>
+</nav>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+        <div class="navbar-end-item navbar-persistent--container">
+          
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+        </div>
+      
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+
+
+  
+  
+    <div class="navbar-persistent--mobile">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+    </div>
+  
+
+  
+  <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+  </label>
+  
+
+</div>
+  </nav>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="00_installation.html">
+                        Preparation of the session
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="01_our_first_juptyer_notebook.html">
+                        Python code in Jupyter notebooks
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="02_Dont_try_this_at_home.html">
+                        Pitfalls when working with Jupyter notebooks
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="10_image_processing.html">
+                        Bioimage Analysis in Jupyter Notebooks
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="11_cropping_images.html">
+                        Cropping images
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="12_multi_channel_image_data.html">
+                        Multi-channel image data
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="14_inspecting_3d_images.html">
+                        Inspecting 3D image data with pyclesperanto
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="20_filter_overview.html">
+                        Filter overview
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="22_background_removal.html">
+                        Background removal filters
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="50_Thresholding.html">
+                        Thresholding
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="51_connected_component_labeling.html">
+                        Connected component labeling
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="52_voronoi_otsu_labeling.html">
+                        Voronoi-Otsu-labeling
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="55_cellpose-sam.html">
+                        Image Segmentation with CellPose-SAM
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        Quantitative image analysis
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="71_measurement_visualization.html">
+                        Visualization of measurements
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="72_timelapse_measurement_visualization.html">
+                        Cell Rounding Assay Analysis
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="73_process_folders.html">
+                        How process files in a folder
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="80_bia-bob-demo.html">
+                        BiA-Bob
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="81_bia_bob-statistical_testing.html">
+                        Statistical testing
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="82_generate_notebook.html">
+                        AI-assisted Notebook generation
+                      </a>
+                    </li>
+                
+                </div>
+            </div>
+            
+    </ul>
+</nav>
+      </div>
+      
+      </div>
+    
+
+    
+    
+    <div class="sidebar-header-items__end">
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+    
+  </div>
+
+  
+  <div class="sidebar-start-items sidebar-primary__section">
+    <div class="sidebar-start-items__item">
+  
+
+
+<a class="navbar-brand logo" href="intro.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image">
+    <img src="_static/logo.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    </div>
+    <div class="sidebar-start-items__item">
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+    <div class="sidebar-start-items__item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Bio-Image Analysis @ EMBL Heidelberg 2026
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Preparation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="00_installation.html">Preparation of the session</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Jupyter notebook basics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_our_first_juptyer_notebook.html">Python code in Jupyter notebooks</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="02_Dont_try_this_at_home.html">Pitfalls when working with Jupyter notebooks</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Image file handling and visualization</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="10_image_processing.html">Bioimage Analysis in Jupyter Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_cropping_images.html">Cropping images</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="12_multi_channel_image_data.html">Multi-channel image data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_inspecting_3d_images.html">Inspecting 3D image data with pyclesperanto</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Image filtering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="20_filter_overview.html">Filter overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22_background_removal.html">Background removal filters</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Image segmentation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="50_Thresholding.html">Thresholding</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="51_connected_component_labeling.html">Connected component labeling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="52_voronoi_otsu_labeling.html">Voronoi-Otsu-labeling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="55_cellpose-sam.html">Image Segmentation with CellPose-SAM</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Quantitative measurements</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Quantitative image analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="71_measurement_visualization.html">Visualization of measurements</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="72_timelapse_measurement_visualization.html">Cell Rounding Assay Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="73_process_folders.html">How process files in a folder</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">AI for code generation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="80_bia-bob-demo.html">BiA-Bob</a></li>
+<li class="toctree-l1"><a class="reference internal" href="81_bia_bob-statistical_testing.html">Statistical testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="82_generate_notebook.html">AI-assisted Notebook generation</a></li>
+
+</ul>
+
+    </div>
+</nav>
+    </div>
+  </div>
+  
+
+  
+  <div class="sidebar-end-items sidebar-primary__section">
+    <div class="sidebar-end-items__item">
+    </div>
+  </div>
+
+  
+  <div id="rtd-footer-container"></div>
+
+      </div>
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+        <div class="bd-content">
+          <div class="bd-article-container">
+            
+            <div class="bd-header-article">
+                
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        <label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" data-toggle="tooltip" data-placement="right" title="Toggle primary sidebar">
+            <span class="fa-solid fa-bars"></span>
+        </label>
+    </div>
+    <div class="header-article__right">
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+  </ul>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<div class="dropdown dropdown-repository-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      <li><a href="https://github.com/scads/embl-bia-2026" target="_blank"
+   class="btn btn-sm dropdown-item"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">repository</span>
+</a>
+</a>
+      
+      <li><a href="https://github.com/scads/embl-bia-2026/issues/new?title=Issue%20on%20page%20%2F70_quantitative_measurements.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm dropdown-item"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">open issue</span>
+</a>
+</a>
+      
+  </ul>
+</div>
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      <li><a href="_sources/70_quantitative_measurements.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</a>
+      
+      <li>
+<button onclick="printPdf(this)"
+  class="btn btn-sm dropdown-item"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</a>
+      
+  </ul>
+</div>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary" data-toggle="tooltip" data-placement="left" title="Toggle secondary sidebar">
+            <span class="fa-solid fa-list"></span>
+        </label>
+    </div>
+</div>
+            </div>
+            
+            
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Quantitative image analysis</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#measurements-region-properties">
+   Measurements / region properties
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+            <article class="bd-article" role="main">
+              
+  <section id="quantitative-image-analysis">
+<h1>Quantitative image analysis<a class="headerlink" href="#quantitative-image-analysis" title="Permalink to this heading">#</a></h1>
+<p>After segmenting and labeling objects in an image, we can measure properties of these objects.</p>
+<p>See also</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://scipy-lectures.org/packages/scikit-image/index.html#measuring-regions-properties">SciPy lecture notes: Measuring region properties</a></p></li>
+<li><p><a class="reference external" href="https://scikit-image.org/docs/stable/auto_examples/segmentation/plot_regionprops.html">Plot regionprops</a></p></li>
+</ul>
+<p>Before we can do measurements, we need an <code class="docutils literal notranslate"><span class="pre">image</span></code> and a corresponding <code class="docutils literal notranslate"><span class="pre">label_image</span></code>. Therefore, we recapitulate filtering, thresholding and labeling:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">skimage.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">imread</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">skimage</span><span class="w"> </span><span class="kn">import</span> <span class="n">filters</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">skimage</span><span class="w"> </span><span class="kn">import</span> <span class="n">measure</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">stackview</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># load image</span>
+<span class="n">image</span> <span class="o">=</span> <span class="n">imread</span><span class="p">(</span><span class="s2">&quot;data/blobs.tif&quot;</span><span class="p">)</span>
+
+<span class="c1"># denoising</span>
+<span class="n">blurred_image</span> <span class="o">=</span> <span class="n">filters</span><span class="o">.</span><span class="n">gaussian</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># binarization</span>
+<span class="n">threshold</span> <span class="o">=</span> <span class="n">filters</span><span class="o">.</span><span class="n">threshold_otsu</span><span class="p">(</span><span class="n">blurred_image</span><span class="p">)</span>
+<span class="n">thresholded_image</span> <span class="o">=</span> <span class="n">blurred_image</span> <span class="o">&gt;=</span> <span class="n">threshold</span>
+
+<span class="c1"># labeling</span>
+<span class="n">label_image</span> <span class="o">=</span> <span class="n">measure</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="n">thresholded_image</span><span class="p">)</span>
+
+<span class="c1"># visualization</span>
+<span class="n">stackview</span><span class="o">.</span><span class="n">insight</span><span class="p">(</span><span class="n">label_image</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<tr>
+<td>
+<img src="data:image/png;base64,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"></img>
+</td>
+<td style="text-align: center; vertical-align: top;">
+
+<table>
+<tr><td>shape</td><td>(254,&nbsp;256)</td></tr>
+<tr><td>dtype</td><td>int32</td></tr>
+<tr><td>size</td><td>254.0 kB</td></tr>
+<tr><td>min</td><td>0</td></tr><tr><td>max</td><td>62</td></tr><tr><td>n labels</td><td>62</td></tr>
+</table>
+
+</td>
+</tr>
+</table></div></div>
+</div>
+<section id="measurements-region-properties">
+<h2>Measurements / region properties<a class="headerlink" href="#measurements-region-properties" title="Permalink to this heading">#</a></h2>
+<p>To read out properties from regions, we use the <a class="reference external" href="https://scikit-image.org/docs/stable/api/skimage.measure.html#skimage.measure.regionprops_table"><code class="docutils literal notranslate"><span class="pre">regionprops_table</span></code></a> function, which directly returns a dictionary that can be converted to a pandas DataFrame:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># analyse objects using regionprops_table</span>
+<span class="n">properties</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">,</span> <span class="s1">&#39;area&#39;</span><span class="p">,</span> <span class="s1">&#39;mean_intensity&#39;</span><span class="p">,</span> <span class="s1">&#39;major_axis_length&#39;</span><span class="p">,</span> <span class="s1">&#39;minor_axis_length&#39;</span><span class="p">]</span>
+
+<span class="n">measurements</span> <span class="o">=</span> <span class="n">measure</span><span class="o">.</span><span class="n">regionprops_table</span><span class="p">(</span><span class="n">label_image</span><span class="p">,</span> <span class="n">intensity_image</span><span class="o">=</span><span class="n">image</span><span class="p">,</span> <span class="n">properties</span><span class="o">=</span><span class="n">properties</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">measurements</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>label</th>
+      <th>area</th>
+      <th>mean_intensity</th>
+      <th>major_axis_length</th>
+      <th>minor_axis_length</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>429.0</td>
+      <td>191.440559</td>
+      <td>34.779230</td>
+      <td>16.654732</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>183.0</td>
+      <td>179.846995</td>
+      <td>20.950530</td>
+      <td>11.755645</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>658.0</td>
+      <td>205.604863</td>
+      <td>30.198484</td>
+      <td>28.282790</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>433.0</td>
+      <td>217.515012</td>
+      <td>24.508791</td>
+      <td>23.079220</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>472.0</td>
+      <td>213.033898</td>
+      <td>31.084766</td>
+      <td>19.681190</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The result is already a dictionary of arrays, which can directly be used as a pandas DataFrame. The properties available are listed in the <a class="reference external" href="https://scikit-image.org/docs/dev/api/skimage.measure.html#skimage.measure.regionprops">documentation of the <code class="docutils literal notranslate"><span class="pre">measure.regionprops</span></code> function</a>.</p>
+<p>We can add custom columns, for example the <code class="docutils literal notranslate"><span class="pre">aspect_ratio</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># add aspect_ratio column</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;aspect_ratio&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;major_axis_length&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;minor_axis_length&#39;</span><span class="p">]</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>label</th>
+      <th>area</th>
+      <th>mean_intensity</th>
+      <th>major_axis_length</th>
+      <th>minor_axis_length</th>
+      <th>aspect_ratio</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>429.0</td>
+      <td>191.440559</td>
+      <td>34.779230</td>
+      <td>16.654732</td>
+      <td>2.088249</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>183.0</td>
+      <td>179.846995</td>
+      <td>20.950530</td>
+      <td>11.755645</td>
+      <td>1.782168</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>658.0</td>
+      <td>205.604863</td>
+      <td>30.198484</td>
+      <td>28.282790</td>
+      <td>1.067734</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>433.0</td>
+      <td>217.515012</td>
+      <td>24.508791</td>
+      <td>23.079220</td>
+      <td>1.061942</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>472.0</td>
+      <td>213.033898</td>
+      <td>31.084766</td>
+      <td>19.681190</td>
+      <td>1.579415</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Those dataframes can be saved to disk conveniently:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;blobs_analysis.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Furthermore, one can measure properties from our <code class="docutils literal notranslate"><span class="pre">df</span></code> table using <a class="reference external" href="https://numpy.org/doc/stable/">numpy</a>. For example the mean area:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># measure mean area</span>
+<span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;area&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(355.3709677419355)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
+<p>Analyse the loaded blobs <code class="docutils literal notranslate"><span class="pre">image</span></code>.</p>
+<ul class="simple">
+<li><p>How many objects are in it?</p></li>
+</ul>
+<ul class="simple">
+<li><p>How large is the largest object?</p></li>
+</ul>
+<ul class="simple">
+<li><p>What are mean and standard deviation of the image?</p></li>
+</ul>
+<ul class="simple">
+<li><p>What are mean and standard deviation of the area of the segmented objects?</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+            </article>
+            
+
+            
+            
+            <footer class="bd-footer-article">
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="55_cellpose-sam.html" title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">Image Segmentation with CellPose-SAM</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="71_measurement_visualization.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">Visualization of measurements</p>
+  </div>
+  <i class="fa-solid fa-angle-right"></i>
+  </a>
+</div>
+            </footer>
+            
+          </div>
+          
+          
+          
+            <div class="bd-sidebar-secondary bd-toc">
+              
+<div class="toc-item">
+  
+<div class="tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav" class="page-toc">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#measurements-region-properties">
+   Measurements / region properties
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
+  </a>
+ </li>
+</ul>
+
+</nav>
+</div>
+
+            </div>
+          
+          
+        </div>
+        <footer class="bd-footer-content">
+          <div class="bd-footer-content__inner">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Robert Haase
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+<p class="copyright">
+
+    &copy; Copyright 2026.<br>
+
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+Last updated on None.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </div>
+        </footer>
+        
+
+      </main>
+    </div>
+  </div>
+
+  
+    
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94"></script>
+
+  </body>
+</html>
