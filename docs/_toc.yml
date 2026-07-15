@@ -20,6 +20,7 @@ parts:
   - caption: "Image filtering"
     chapters:
       - file: 20_filter_overview.ipynb
+      - file: 21_understanding_filters_visually.ipynb
       - file: 22_background_removal.ipynb
         
   - caption: "Image segmentation"
@@ -42,9 +43,11 @@ parts:
       - file: 81_bia_bob-statistical_testing.ipynb
       - file: 82_generate_notebook.ipynb
 
-#  - caption: "Extras"
-#    chapters:
-#      - file: 93_simulated_dataset.ipynb
+  - caption: "Extras"
+    chapters:
+      - file: 93_simulated_dataset.ipynb
+      - file: 94_watershed_segmentation.ipynb
+      - file: 95_histogram.ipynb
 
   - caption: "Links"
     chapters:
