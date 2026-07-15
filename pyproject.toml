@@ -11,6 +11,7 @@ dependencies = [
     "numpy>=2.5.1",
     "openai>=2.45.0",
     "pandas>=3.0.3",
+    "pooch>=1.9.0",
     "pyclesperanto>=0.22.0",
     "python-dotenv>=1.2.2",
     "scikit-image>=0.26.0",

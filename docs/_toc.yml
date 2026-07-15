@@ -41,4 +41,15 @@ parts:
       - file: 80_bia-bob-demo.ipynb
       - file: 81_bia_bob-statistical_testing.ipynb
       - file: 82_generate_notebook.ipynb
-      
+
+#  - caption: "Extras"
+#    chapters:
+#      - file: 93_simulated_dataset.ipynb
+
+  - caption: "Links"
+    chapters:
+    - url: https://doi.org/10.5281/zenodo.21370808 
+      title: Download slides
+    - url: https://creativecommons.org/licenses/by/4.0/
+      title: License CC-BY 4.0
+    - file: imprint
