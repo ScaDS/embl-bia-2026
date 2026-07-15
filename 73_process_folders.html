@@ -198,6 +198,13 @@ const thebe_selector_output = ".output, .cell_output"
                 
 
                     <li class="nav-item">
+                      <a class="nav-link nav-internal" href="21_understanding_filters_visually.html">
+                        Understanding filters visually
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
                       <a class="nav-link nav-internal" href="22_background_removal.html">
                         Background removal filters
                       </a>
@@ -277,6 +284,27 @@ const thebe_selector_output = ".output, .cell_output"
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="82_generate_notebook.html">
                         AI-assisted Notebook generation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="93_simulated_dataset.html">
+                        Simulation of image formation + image restoration
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="94_watershed_segmentation.html">
+                        Cell Segmentation Using the Watershed Algorithm
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="95_histogram.html">
+                        Interactive histogram
                       </a>
                     </li>
                 
@@ -436,6 +464,13 @@ const thebe_selector_output = ".output, .cell_output"
                 
 
                     <li class="nav-item">
+                      <a class="nav-link nav-internal" href="21_understanding_filters_visually.html">
+                        Understanding filters visually
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
                       <a class="nav-link nav-internal" href="22_background_removal.html">
                         Background removal filters
                       </a>
@@ -515,6 +550,27 @@ const thebe_selector_output = ".output, .cell_output"
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="82_generate_notebook.html">
                         AI-assisted Notebook generation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="93_simulated_dataset.html">
+                        Simulation of image formation + image restoration
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="94_watershed_segmentation.html">
+                        Cell Segmentation Using the Watershed Algorithm
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="95_histogram.html">
+                        Interactive histogram
                       </a>
                     </li>
                 
@@ -631,6 +687,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Image filtering</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="20_filter_overview.html">Filter overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21_understanding_filters_visually.html">Understanding filters visually</a></li>
 <li class="toctree-l1"><a class="reference internal" href="22_background_removal.html">Background removal filters</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Image segmentation</span></p>
@@ -656,6 +713,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="81_bia_bob-statistical_testing.html">Statistical testing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="82_generate_notebook.html">AI-assisted Notebook generation</a></li>
 
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Extras</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="93_simulated_dataset.html">Simulation of image formation + image restoration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="94_watershed_segmentation.html">Cell Segmentation Using the Watershed Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="95_histogram.html">Interactive histogram</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Links</span></p>
 <ul class="nav bd-sidenav">
@@ -996,24 +1059,35 @@ banana0026.tif
 <span class="k">for</span> <span class="n">image_file</span> <span class="ow">in</span> <span class="n">image_file_list</span><span class="p">:</span>
     <span class="n">image</span> <span class="o">=</span> <span class="n">imread</span><span class="p">(</span><span class="n">directory</span> <span class="o">+</span> <span class="n">image_file</span><span class="p">)</span>
     <span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
-    <span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/27af91df649ec573fb909367a699fc086a617c20c71798b69501604b1a036d0b.png" src="_images/27af91df649ec573fb909367a699fc086a617c20c71798b69501604b1a036d0b.png" />
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># go through all files in the folder</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">for</span> <span class="n">image_file</span> <span class="ow">in</span> <span class="n">image_file_list</span><span class="p">:</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">image</span> <span class="o">=</span> <span class="n">imread</span><span class="p">(</span><span class="n">directory</span> <span class="o">+</span> <span class="n">image_file</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">5</span>     <span class="n">show</span><span class="p">()</span>
-
-<span class="ne">NameError</span>: name &#39;show&#39; is not defined
-</pre></div>
-</div>
+<img alt="_images/63ece851d9e298755ab4e294617489b50cc177618fed52c8136e8a94ac1c9891.png" src="_images/63ece851d9e298755ab4e294617489b50cc177618fed52c8136e8a94ac1c9891.png" />
+<img alt="_images/973861b8d045df410e48c55ae4e73394c00686a5ee315a501a583412801c9d7a.png" src="_images/973861b8d045df410e48c55ae4e73394c00686a5ee315a501a583412801c9d7a.png" />
+<img alt="_images/4d2a94d10b0404edd377ef24ec84050f384174940dbd5f409bc59f2136fbede2.png" src="_images/4d2a94d10b0404edd377ef24ec84050f384174940dbd5f409bc59f2136fbede2.png" />
+<img alt="_images/3d9003a1caf8238d36a9c536453626772d3024d928094cad8cabee845862a7e9.png" src="_images/3d9003a1caf8238d36a9c536453626772d3024d928094cad8cabee845862a7e9.png" />
+<img alt="_images/38a2ade50fa060552cec3d971653db632560f9bc2799b2184e7c27dae93b27ce.png" src="_images/38a2ade50fa060552cec3d971653db632560f9bc2799b2184e7c27dae93b27ce.png" />
+<img alt="_images/bd9a15d358cdfeb2d0ecb0aacddcfecb866d7cce1a90d3c8decd7cb55a2dede8.png" src="_images/bd9a15d358cdfeb2d0ecb0aacddcfecb866d7cce1a90d3c8decd7cb55a2dede8.png" />
+<img alt="_images/5ccb3076390cbfa7fc92168a2d80655c7b6533bb95e033486e2a106e855549ff.png" src="_images/5ccb3076390cbfa7fc92168a2d80655c7b6533bb95e033486e2a106e855549ff.png" />
+<img alt="_images/f10c512ed6a66349fbcfcda5b64a35ebfdec25685fccfcb9a720dceac2495ace.png" src="_images/f10c512ed6a66349fbcfcda5b64a35ebfdec25685fccfcb9a720dceac2495ace.png" />
+<img alt="_images/c7088c3ac769f6dfa475bee53e5026e0f3ab7231e21e9de6983b257fff35989c.png" src="_images/c7088c3ac769f6dfa475bee53e5026e0f3ab7231e21e9de6983b257fff35989c.png" />
+<img alt="_images/8cf2d121ab1c5c73cb1755d565aaa640a7285ebdc456c6d1c1aecda27018adf8.png" src="_images/8cf2d121ab1c5c73cb1755d565aaa640a7285ebdc456c6d1c1aecda27018adf8.png" />
+<img alt="_images/0014654411ea800d5446469b97bd0e6cbe5d356391d56232c738f2e36c2a8f99.png" src="_images/0014654411ea800d5446469b97bd0e6cbe5d356391d56232c738f2e36c2a8f99.png" />
+<img alt="_images/cda2946581c242b3a4dfb6dfcdf6d393c7f5c8615215f263c75ff296ab14d246.png" src="_images/cda2946581c242b3a4dfb6dfcdf6d393c7f5c8615215f263c75ff296ab14d246.png" />
+<img alt="_images/b7fc2172065159a74613e43fccf210aa49b397c281c6a0da21c1298bb79a200a.png" src="_images/b7fc2172065159a74613e43fccf210aa49b397c281c6a0da21c1298bb79a200a.png" />
+<img alt="_images/47fae8df18450b7b2bacfe41323cb0aa439c03e656bb79cdc8129f59932e5542.png" src="_images/47fae8df18450b7b2bacfe41323cb0aa439c03e656bb79cdc8129f59932e5542.png" />
+<img alt="_images/ce9cf1c1b9e9fcc50301674495f58bf8ff1886e104285e8494d5db2d82610085.png" src="_images/ce9cf1c1b9e9fcc50301674495f58bf8ff1886e104285e8494d5db2d82610085.png" />
+<img alt="_images/6e4cd20cbbdcb482d0f7e240c9b22296301d3f5c820eea95753d167626672ab7.png" src="_images/6e4cd20cbbdcb482d0f7e240c9b22296301d3f5c820eea95753d167626672ab7.png" />
+<img alt="_images/eff17e68646546d8c3f8de320af046b758887bea0750f63d06a28be948af2ccf.png" src="_images/eff17e68646546d8c3f8de320af046b758887bea0750f63d06a28be948af2ccf.png" />
+<img alt="_images/9730525a32ec8d20fe88a4e9411a68190fdfea54a5a751d707d86d26fe0649d8.png" src="_images/9730525a32ec8d20fe88a4e9411a68190fdfea54a5a751d707d86d26fe0649d8.png" />
+<img alt="_images/48a0d8483f767c45e7a242978b42b52ff43448e7ba2347ff3a3fc85bef56ce4b.png" src="_images/48a0d8483f767c45e7a242978b42b52ff43448e7ba2347ff3a3fc85bef56ce4b.png" />
+<img alt="_images/62e341a41bcafbb044e9e7049a2344157bf6323cf4a26434a7eced1cfbaa6e0d.png" src="_images/62e341a41bcafbb044e9e7049a2344157bf6323cf4a26434a7eced1cfbaa6e0d.png" />
+<img alt="_images/b314d761b3f36629f8a7510650d4c760ca29f40d2c835c3ea5d82b728c1d9fbf.png" src="_images/b314d761b3f36629f8a7510650d4c760ca29f40d2c835c3ea5d82b728c1d9fbf.png" />
+<img alt="_images/932fdcd7dfcbb494df586569befa7a9324519be738f83585f02e3ec625d7f8fe.png" src="_images/932fdcd7dfcbb494df586569befa7a9324519be738f83585f02e3ec625d7f8fe.png" />
+<img alt="_images/a0206a902d8ef8806b3fc0aedc6fface96f19a0e8bb8b269e23c4456123864c9.png" src="_images/a0206a902d8ef8806b3fc0aedc6fface96f19a0e8bb8b269e23c4456123864c9.png" />
+<img alt="_images/416f8a7fd5c6b03ff1a084743c38ccd01e1f2675c985b169fba092222f8e7dab.png" src="_images/416f8a7fd5c6b03ff1a084743c38ccd01e1f2675c985b169fba092222f8e7dab.png" />
 </div>
 </div>
 <p><a class="reference external" href="https://nbviewer.jupyter.org/github/BiAPoL/Bio-image_Analysis_with_Python/blob/main/python_basics/09_custom_functions.ipynb">Custom functions</a> help us to keep code organized. For example, we can put image-analysis code in a function and then just call it:</p>
@@ -1033,12 +1107,46 @@ banana0026.tif
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(69.15106201171875)
+</pre></div>
+</div>
+</div>
 </div>
 <p>With such a custom function, we can also make use of the short form for writing for-loops:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mean_intensities_of_all_images</span> <span class="o">=</span> <span class="p">[</span><span class="n">load_and_measure</span><span class="p">(</span><span class="n">directory</span> <span class="o">+</span> <span class="n">file</span><span class="p">)</span> <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">image_file_list</span><span class="p">]</span>
 <span class="n">mean_intensities_of_all_images</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[np.float64(12.94198947482639),
+ np.float64(25.04678683810764),
+ np.float64(39.627543131510414),
+ np.float64(49.71319580078125),
+ np.float64(56.322109646267364),
+ np.float64(60.08679877387153),
+ np.float64(63.94538031684028),
+ np.float64(66.04618326822917),
+ np.float64(69.15106201171875),
+ np.float64(70.85603162977431),
+ np.float64(74.40909152560764),
+ np.float64(77.48423936631944),
+ np.float64(81.77360026041667),
+ np.float64(85.44072129991319),
+ np.float64(91.22532823350694),
+ np.float64(94.36199951171875),
+ np.float64(98.47229682074652),
+ np.float64(99.3980712890625),
+ np.float64(102.34300401475694),
+ np.float64(101.50947401258681),
+ np.float64(97.14067247178819),
+ np.float64(80.13118489583333),
+ np.float64(49.77497694227431),
+ np.float64(28.36090766059028),
+ np.float64(18.806070963541668)]
 </pre></div>
 </div>
 </div>
@@ -1052,6 +1160,9 @@ banana0026.tif
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/2b5f9160b980e8ed0c294a61b8e0af39dd46343beadd38ec970ac8db6178b61a.png" src="_images/2b5f9160b980e8ed0c294a61b8e0af39dd46343beadd38ec970ac8db6178b61a.png" />
 </div>
 </div>
 </section>

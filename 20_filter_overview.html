@@ -61,7 +61,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = '20_filter_overview';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Background removal filters" href="22_background_removal.html" />
+    <link rel="next" title="Understanding filters visually" href="21_understanding_filters_visually.html" />
     <link rel="prev" title="Inspecting 3D image data with pyclesperanto" href="14_inspecting_3d_images.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="docsearch:language" content="en">
@@ -198,6 +198,13 @@ const thebe_selector_output = ".output, .cell_output"
                 
 
                     <li class="nav-item">
+                      <a class="nav-link nav-internal" href="21_understanding_filters_visually.html">
+                        Understanding filters visually
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
                       <a class="nav-link nav-internal" href="22_background_removal.html">
                         Background removal filters
                       </a>
@@ -277,6 +284,27 @@ const thebe_selector_output = ".output, .cell_output"
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="82_generate_notebook.html">
                         AI-assisted Notebook generation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="93_simulated_dataset.html">
+                        Simulation of image formation + image restoration
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="94_watershed_segmentation.html">
+                        Cell Segmentation Using the Watershed Algorithm
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="95_histogram.html">
+                        Interactive histogram
                       </a>
                     </li>
                 
@@ -436,6 +464,13 @@ const thebe_selector_output = ".output, .cell_output"
                 
 
                     <li class="nav-item">
+                      <a class="nav-link nav-internal" href="21_understanding_filters_visually.html">
+                        Understanding filters visually
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
                       <a class="nav-link nav-internal" href="22_background_removal.html">
                         Background removal filters
                       </a>
@@ -515,6 +550,27 @@ const thebe_selector_output = ".output, .cell_output"
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="82_generate_notebook.html">
                         AI-assisted Notebook generation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="93_simulated_dataset.html">
+                        Simulation of image formation + image restoration
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="94_watershed_segmentation.html">
+                        Cell Segmentation Using the Watershed Algorithm
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="95_histogram.html">
+                        Interactive histogram
                       </a>
                     </li>
                 
@@ -631,6 +687,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Image filtering</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Filter overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21_understanding_filters_visually.html">Understanding filters visually</a></li>
 <li class="toctree-l1"><a class="reference internal" href="22_background_removal.html">Background removal filters</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Image segmentation</span></p>
@@ -656,6 +713,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="81_bia_bob-statistical_testing.html">Statistical testing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="82_generate_notebook.html">AI-assisted Notebook generation</a></li>
 
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Extras</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="93_simulated_dataset.html">Simulation of image formation + image restoration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="94_watershed_segmentation.html">Cell Segmentation Using the Watershed Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="95_histogram.html">Interactive histogram</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Links</span></p>
 <ul class="nav bd-sidenav">
@@ -893,7 +956,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\haase\miniforge3\envs\bob-env\Lib\site-packages\skimage\filters\rank\generic.py:332: UserWarning: Bad rank filter performance is expected due to a large number of bins (56899), equivalent to an approximate bitdepth of 15.8.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\structure\code\embl-bia-2026\.venv\Lib\site-packages\skimage\filters\rank\generic.py:332: UserWarning: Bad rank filter performance is expected due to a large number of bins (56899), equivalent to an approximate bitdepth of 15.8.
   image, footprint, out, mask, n_bins = _preprocess_input(
 </pre></div>
 </div>
@@ -953,7 +1016,7 @@ Alternatively, we can use the Median-filter which is edge-preserving.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "593bda1386a04fcfbc897b16143f475d", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "cda8d19f0c484adba49dd1990b950935", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 </section>
 <section id="other-filters">
@@ -972,14 +1035,23 @@ Alternatively, we can use the Median-filter which is edge-preserving.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">gaussian</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">sigma</span><span class="p">:</span><span class="nb">float</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">filters</span><span class="o">.</span><span class="n">gaussian</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
+
+<span class="n">stackview</span><span class="o">.</span><span class="n">interact</span><span class="p">(</span><span class="n">gaussian</span><span class="p">,</span> <span class="n">image</span><span class="p">,</span> <span class="n">zoom_factor</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "a68cf102ef62485497a9811a0eab1b55", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gradient</span> <span class="o">=</span> <span class="n">filters</span><span class="o">.</span><span class="n">rank</span><span class="o">.</span><span class="n">gradient</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">morphology</span><span class="o">.</span><span class="n">disk</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
 
 <span class="n">stackview</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">gradient</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/e350604d526637c2fe3bce8efc2fd596237a819ddef878d2e870b61288453474.png" src="_images/e350604d526637c2fe3bce8efc2fd596237a819ddef878d2e870b61288453474.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -990,14 +1062,11 @@ Alternatively, we can use the Median-filter which is edge-preserving.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/5e78877d29a3312df3cca3b8e61bd40a0e7e0d5e7a7b6e90c5c8c8bf7d4d22a6.png" src="_images/5e78877d29a3312df3cca3b8e61bd40a0e7e0d5e7a7b6e90c5c8c8bf7d4d22a6.png" />
-</div>
 </div>
 </section>
 <section id="exercise">
 <h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h2>
-<p>Apply a mean filter to the image and a sobel filter to the result of the mean filter afterwards. Show the final result.</p>
+<p>Apply a mean filter to the image and a sobel filter to the result of the mean filter afterwards. Try different mean filter radii. Compare the results.</p>
 </section>
 </section>
 
@@ -1036,10 +1105,10 @@ Alternatively, we can use the Median-filter which is edge-preserving.</p>
           <p class="prev-next-title">Inspecting 3D image data with pyclesperanto</p>
       </div>
   </a>
-  <a class='right-next' id="next-link" href="22_background_removal.html" title="next page">
+  <a class='right-next' id="next-link" href="21_understanding_filters_visually.html" title="next page">
   <div class="prev-next-info">
       <p class="prev-next-subtitle">next</p>
-      <p class="prev-next-title">Background removal filters</p>
+      <p class="prev-next-title">Understanding filters visually</p>
   </div>
   <i class="fa-solid fa-angle-right"></i>
   </a>
